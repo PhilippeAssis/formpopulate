@@ -8,13 +8,13 @@
     $.fn.formPopulate = function (data) {
         var inputs = $(this).find('select,input,textarea');
 
-        if (inputs.length) {
+        if (inputs.length > 0) {
             for (var i = 0; inputs.length >= i; i++) {
                 var input = $(inputs[i]);
                 var name = input.attr('name');
 
 
-                if (data[name] == undefined) {
+                if (data[name] != undefined) {
                     var dataValue = data[name];
 
                     if (input.is('input')) {
