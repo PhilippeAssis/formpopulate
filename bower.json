@@ -1,0 +1,30 @@
+{
+  "name": "formPopulate",
+  "homepage": "https://github.com/PhilippeAssis/formpopulate",
+  "authors": [
+    "Philippe Assis <assis@philippeassis.com>"
+  ],
+  "description": "Distribute values to fields on a form from a json",
+  "main": "jquer.formpopulate.js",
+  "moduleType": [],
+  "keywords": [
+    "form",
+    "populate",
+    "json",
+    "value",
+    "input",
+    "text",
+    "radio",
+    "select",
+    "checkbox",
+    "textarea"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
