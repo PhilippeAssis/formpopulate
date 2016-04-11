@@ -1,5 +1,6 @@
 /**
- * Created by philippe on 10/04/16.
+ * Form Populate - Create by Philippe Assis
+ * www.philippeassis.com
  */
 (function ($) {
     $.fn.formPopulate = function (data) {
@@ -10,33 +11,34 @@
                 var input = $(inputs[i]);
                 var name = input.attr('name');
 
+
                 if (data[name] == undefined) {
                     continue;
                 }
                 else {
                     var dataValue = data[name];
-                }
 
-                if (input.is('input')) {
-                    switch (input.attr('type')) {
-                        case 'checkbox':
-                            input.prop('checked', dataValue)
-                            break;
-                        case 'radio':
-                            input.prop('checked', (dataValue == input.attr('value')) ? true : false)
-                            break;
-                        case 'text':
-                            input.val(dataValue);
-                            break;
+                    if (input.is('input')) {
+                        switch (input.attr('type')) {
+                            case 'checkbox':
+                                input.prop('checked', dataValue);
+                                break;
+                            case 'radio':
+                                input.prop('checked', (dataValue == input.attr('value') ? true : false));
+                                break;
+                            case 'text':
+                                input.val(dataValue);
+                                break;
+                        }
                     }
-                }
-                else if (input.is('select')) {
-                    $("option", input).each(function () {
-                        $(this).attr('selected', ($(this).val() === dataValue));
-                    })
-                }
-                else if (input.is('textarea')) {
-                    input.val(dataValue);
+                    else if (input.is('select')) {
+                        $("option", input).each(function () {
+                            $(this).attr('selected', ($(this).val() === dataValue));
+                        })
+                    }
+                    else if (input.is('textarea')) {
+                        input.val(dataValue);
+                    }
                 }
             }
         }
