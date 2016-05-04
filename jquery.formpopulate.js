@@ -25,7 +25,7 @@
                             case 'radio':
                                 input.prop('checked', (dataValue == input.attr('value') ? true : false));
                                 break;
-                            case 'text':
+                            default:
                                 input.val(dataValue);
                                 break;
                         }
